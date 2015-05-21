@@ -16,9 +16,9 @@ APP_ID = ''  # aka API/Client id
 USER_LOGIN = ''  # user email or phone number
 USER_PASSWORD = ''
 
-from test_props import APP_ID, USER_LOGIN, USER_PASSWORD
+# from test_props import APP_ID, USER_LOGIN, USER_PASSWORD
 
-
+@unittest.SkipTest
 class VkTestCase(unittest.TestCase):
 
     def setUp(self):
