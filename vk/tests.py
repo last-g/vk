@@ -16,7 +16,6 @@ APP_ID = ''  # aka API/Client id
 USER_LOGIN = ''  # user email or phone number
 USER_PASSWORD = ''
 
-
 class VkTestCase(unittest.TestCase):
 
     def setUp(self):
