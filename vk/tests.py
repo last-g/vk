@@ -16,12 +16,15 @@ APP_ID = ''  # aka API/Client id
 USER_LOGIN = ''  # user email or phone number
 USER_PASSWORD = ''
 
-from test_props import APP_ID, USER_LOGIN, USER_PASSWORD
-
 
 class VkTestCase(unittest.TestCase):
 
     def setUp(self):
+        try:
+            from test_props import APP_ID, USER_LOGIN, USER_PASSWORD
+        except ImportError:
+            raise self.skipTest('You need to provide some test credentials in test_props file')
+
         self.vk_api = vk.API(APP_ID, USER_LOGIN, USER_PASSWORD)
         self.vk_token_api = vk.API(access_token=self.vk_api.access_token)
 
